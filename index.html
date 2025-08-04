@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kenisawa | Portafolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: linear-gradient(135deg, #0a0a0a, #1a001a);
+      --bg-light: linear-gradient(135deg, #f9f9f9, #ffeaff);
+      --text-dark: #fff;
+      --text-light: #111;
+      --accent: #ff2bc2;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+      min-height: 100vh;
+      padding: 2rem;
+      backdrop-filter: blur(6px);
+      transition: all 0.3s ease;
+    }
+
+    body.light-mode {
+      background: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 20px rgba(255, 43, 194, 0.4);
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: var(--accent);
+    }
+
+    p {
+      color: #ccc;
+      margin-top: 0.5rem;
+    }
+
+    body.light-mode p {
+      color: #444;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(255, 43, 194, 0.1);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    body.light-mode section {
+      background: rgba(255, 255, 255, 0.7);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .links {
+      margin-top: 1rem;
+    }
+
+    .links a {
+      display: inline-block;
+      margin-right: 1rem;
+      margin-top: 0.5rem;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      background-color: rgba(255, 43, 194, 0.1);
+      border: 1px solid var(--accent);
+      box-shadow: 0 0 0 transparent;
+    }
+
+    .links a:hover {
+      background-color: var(--accent);
+      color: #0a0a0a;
+      box-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent), 0 0 60px var(--accent);
+    }
+
+    #theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 0.5rem 1rem;
+      background-color: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 0 10px var(--accent);
+      transition: all 0.3s ease;
+    }
+
+    #theme-toggle:hover {
+      box-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <button id="theme-toggle">☀️ Modo Claro</button>
+  <audio src="https://files.catbox.moe/pb7krq.m4a" autoplay loop></audio>
+
+  <header>
+    <img src="https://files.catbox.moe/xx9xbf.jpg" alt="Avatar de Kenisawa">
+    <h1>Kenisawa</h1>
+    <p>Creador de Bots de WhatsApp | Influencer en la comunidad JS</p>
+  </header>
+
+  <section>
+    <h2>Sobre Mí</h2>
+    <p>Soy un desarrollador enfocado en la creación de bots para WhatsApp utilizando JavaScript. Formo parte de varios equipos de programación y tengo una fuerte presencia en la comunidad de desarrolladores de bots.</p>
+  </section>
+
+  <section>
+    <h2>Mi Bot de WhatsApp</h2>
+    <p>Mi bot está desarrollado con la librería <strong>Baileys</strong> y un sistema modular potente para facilitar el desarrollo colaborativo.</p>
+    <div class="links">
+      <a href="https://wa.me/5493865310263" target="_blank">📱 Probar el Bot</a>
+      <a href="https://github.com/KenisawaDevolper/Waguri-Ai" target="_blank">💻 Repositorio GitHub</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Mi Host</h2>
+    <p>Uso y ofrezco hosting personalizado para bots con soporte dedicado y uptime garantizado.</p>
+    <div class="links">
+      <a href="https://dash.deluxehost.cl" target="_blank">🌐 Panel de Host</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contacto</h2>
+    <div class="links">
+      <a href="https://wa.me/5493865642938" target="_blank">💬 WhatsApp Personal</a>
+      <a href="https://whatsapp.com/channel/0029VarbyoN2ZjCkcPW7q33F" target="_blank">📢 Canal de WhatsApp</a>
+    </div>
+  </section>
+
+  <script>
+    const toggleButton = document.getElementById('theme-toggle');
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      if (document.body.classList.contains('light-mode')) {
+        toggleButton.textContent = '🌙 Modo Oscuro';
+      } else {
+        toggleButton.textContent = '☀️ Modo Claro';
+      }
+    });
+  </script>
+</body>
+</html>
